@@ -17,7 +17,12 @@
   grid-gap: 25px 0;
   width: 100%;
 }
-.game .game--btn {
+.game .game--btn__wrap {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
+.game .game--btn__wrap .game--btn {
   margin-top: 60px;
   align-self: center;
   background-color: #5035ff;
@@ -30,16 +35,19 @@
   cursor: pointer;
   position: relative;
 }
-.game .game--btn:hover {
+.game .game--btn__wrap .game--btn:hover {
   background-color: white;
   color: #5035ff;
   transform: translateY(-10px);
 }
-.game .game--btn span {
+.game .game--btn__wrap .game--btn span {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
+}
+.game .game--btn__wrap .game--btn span::selection {
+  background: inherit;
 }
 
 .dice {
