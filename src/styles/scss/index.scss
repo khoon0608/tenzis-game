@@ -1,7 +1,19 @@
 /** @format */
 
-@import './App';
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+@import "./App";
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Karla', sans-serif;
+}
 
 body {
-  background-color: peru;
+  background-color: rgb(11, 36, 52);
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }

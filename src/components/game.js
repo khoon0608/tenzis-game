@@ -1,11 +1,26 @@
-import Dice from './dice';
+/** @format */
+
+import Dice from "./dice";
 
 export default function Game() {
-
   return (
-    <section className = "game">
-      <Dice/><Dice/><Dice/><Dice/><Dice/><Dice/><Dice/><Dice/><Dice/><Dice/><Dice/>
-      <button>Roll</button>
+    <section className='game'>
+      <div className='game--dice__wrap'>
+        <Dice />
+        <Dice />
+        <Dice />
+        <Dice />
+        <Dice />
+        <Dice />
+        <Dice />
+        <Dice />
+        <Dice />
+        <Dice />
+      </div>
+
+      <div className='game--btn'>
+        <span>Roll</span>
+      </div>
     </section>
   );
 }

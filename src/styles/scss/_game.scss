@@ -1,0 +1,57 @@
+/** @format */
+
+.game {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+
+  width: 100%;
+
+  margin-top: 30px;
+
+  .game--dice__wrap {
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px 50px;
+
+    align-items: center;
+    justify-content: space-evenly;
+
+    grid-gap: 25px 0;
+
+    width: 100%;
+  }
+
+  .game--btn {
+    margin-top: 60px;
+    align-self: center;
+
+    background-color: rgb(80, 53, 255);
+
+    border-radius: 10px;
+
+    font-size: 25px;
+    color: white;
+
+    width: 120px;
+    height: 60px;
+
+    transition: all 0.3s ease-in-out;
+
+    cursor: pointer;
+
+    position: relative;
+
+    &:hover {
+      background-color: white;
+      color: rgb(80, 53, 255);
+      transform: translateY(-10px);
+    }
+
+    span {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+    }
+  }
+}
