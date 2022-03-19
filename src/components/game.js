@@ -5,12 +5,8 @@ import Dice from "./dice";
 
 export default function Game() {
   const [diceArr, setDiceArr] = React.useState([]);
-
-  const [isGameOver, setIsGameOver] = React.useState(null);
-
-  React.useEffect(() => {
-    setIsGameOver(false);
-  }, []);
+  const [readyToSTart, setReadyToStart] = React.useState(false);
+  const [isGameOver, setIsGameOver] = React.useState(false);
 
   const diceComponents = diceArr.map((item, index) => (
     <Dice key={index} state={item} clickEvent={doFreezeDice} />
@@ -38,16 +34,17 @@ export default function Game() {
   }
 
   function doFreezeDice(event) {
-    setDiceArr((prevDiceArr) =>
-      prevDiceArr.map((dice) => {
-        return dice.id === +event.target.id
-          ? {
-              ...dice,
-              isFreeze: !dice.isFreeze,
-            }
-          : dice;
-      })
-    );
+    if (readyToSTart)
+      setDiceArr((prevDiceArr) =>
+        prevDiceArr.map((dice) => {
+          return dice.id === +event.target.id
+            ? {
+                ...dice,
+                isFreeze: !dice.isFreeze,
+              }
+            : dice;
+        })
+      );
   }
 
   function rollDice() {
@@ -58,9 +55,15 @@ export default function Game() {
     );
   }
 
+  function getReady() {
+    if (diceArr.length >= 5) setReadyToStart(true);
+    else alert(`주사위의 개수는 최소 5개 이상이여야 합니다.`);
+  }
+
   function reset() {
     setDiceArr([]);
     setIsGameOver(false);
+    setReadyToStart(false);
   }
 
   if (
@@ -82,13 +85,19 @@ export default function Game() {
             <span>reset</span>
           </button>
         </section>
+      ) : readyToSTart ? (
+        <section className='game--btn__wrap'>
+          <button className='game--btn'>
+            <span onClick={rollDice}>Roll</span>
+          </button>
+        </section>
       ) : (
         <section className='game--btn__wrap'>
           <button className='game--btn' onClick={addDice}>
             <span>add</span>
           </button>
           <button className='game--btn'>
-            <span onClick={rollDice}>Roll</span>
+            <span onClick={getReady}>Start</span>
           </button>
           <button className='game--btn' onClick={deleteDice}>
             <span>delete</span>
