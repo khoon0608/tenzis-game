@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.f587eb1a.css",
-    "main.js": "/static/js/main.afb4648f.js",
-    "index.html": "/index.html",
-    "main.f587eb1a.css.map": "/static/css/main.f587eb1a.css.map",
-    "main.afb4648f.js.map": "/static/js/main.afb4648f.js.map"
+    "main.css": "/tenzis-game/static/css/main.f587eb1a.css",
+    "main.js": "/tenzis-game/static/js/main.afb4648f.js",
+    "index.html": "/tenzis-game/index.html",
+    "main.f587eb1a.css.map": "/tenzis-game/static/css/main.f587eb1a.css.map",
+    "main.afb4648f.js.map": "/tenzis-game/static/js/main.afb4648f.js.map"
   },
   "entrypoints": [
     "static/css/main.f587eb1a.css",
